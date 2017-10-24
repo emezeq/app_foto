@@ -1,0 +1,68 @@
+Instrucciones: 
+
+Aplicacion funcionando!!
+
+en python 2.7
+
+#################################################################################################
+Web Site download PIP : https://pip.pypa.io/en/stable/installing/
+
+
+if this error :
+
+from PIL import Image
+ImportError: No module named PIL
+
+
+to install :
+
+pip install image
+
+#################################################################################################
+
+Ficheros iniciales:
++ app_foto.py
++ crear_miniaturas.py
++ funciones.py
++ listar.py
++ primero
++ README
+
+##################################################################################################
+funciones.py:
+	-crea la carpeta fotos borradas si esta no existe.
+--------------------------------------------------------------------------------------------------
+primero:
+	-escribe plan.py
+-------------------------------------------------------------------------------------------------
+app_foto.py:
+	-ingreso la carpeta a analizar 
+	-crea el contador de progreso
+	-ejecuta plan.py
+-------------------------------------------------------------------------------------------------
+crear_miniaturas.py:
+	-crea las miniaturas en una carpeta temporal, el escaneo se hace sobre las miniaturas.
+--------------------------------------------------------------------------------------------------
+listar.py:
+	-compara las imagenes iniciales con las miniaturas y elimina las que sobran borrando de la 
+carpeta original.
+	
+#################################################################################################
+
+1) ejecutar "app_foto.py"
+(la ruta a ingresar debe estar sin comillas ni espacios sin escapar)
+Despues de lanzar la app se crearan 2 ficheros mas "plan.py", y "primero.py"
+
+Despues de ejecutar la aplicacion y una vez que al analisis ha finalizado debera borrar los archivos que no se encuentran mencionados mas arriba en 'Ficheros iniciales'.
+
+NOTAS:
+La segunda linea de codigo de App_foto.py aparece comentada. A descomentar sin es necesario.
+Las imágenes deben ser ".jpg" o ".jpeg".
+
+###########################################
+
+*a implementar:
+-hacer comparacion por extension. por ejemplo
+"se encontraron 200 imagenes con formato jpg....analizando"
+"se encontraron 10 imagenes con formato jpeg.....analizando"
+-las rutas estan escritas a mano..hay que implementar las variables para poder llamar desde no importa que script

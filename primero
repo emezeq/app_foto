@@ -1,0 +1,123 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- 
+
+from PIL import Image
+import os.path
+from PIL import ImageChops
+import sys
+import os
+import shutil
+import datetime
+import re
+import commands
+
+
+shebangs = """#!/usr/bin/env python
+# -*- coding: utf-8 -*-\n
+from PIL import Image
+import os.path
+from PIL import ImageChops
+import sys
+import os
+import shutil
+import datetime\n
+\n
+
+
+ruta = ("delta")        #ruta de las imagenes a analizar
+
+
+
+def crear_carpeta():
+    carpeta = '/tmp/fotos_borradas' #carpeta donde guardo las fotos borradas
+    if os.path.exists(carpeta) == True:
+        pass
+    else:
+        os.makedirs(carpeta)
+crear_carpeta() ###########################################################################CREAR LA CARPETA TEMPORAL
+
+lista_valor = []
+
+def actualizar_lista():
+    for f in os.listdir(ruta): #ficheros reemplazado directamente por el comando os.listdir
+        (nombreFichero, extension) = os.path.splitext(f)
+        if extension == ".jpeg": #decanto por extension
+            global lista_valor
+            lista_valor.append(ruta+nombreFichero+extension)
+actualizar_lista()
+
+#lista claves
+indices = len(lista_valor)
+#creo la nueva lista_clave, para alojar los indices
+lista_clave = []
+#iterando para rellenar lista_clave
+for i in range(indices):
+    lista_clave.append('im'+str(i))
+#print lista_clave
+"""
+#crear plantilla
+with open('plan.py', 'w') as plantilla:####modifico acaaa
+    plantilla.write(shebangs)
+
+
+
+ruta = ("delta")            #ruta de las imagenes a analizar
+print "\nLEYENDO ",ruta,"\n"
+
+lista_valor = []
+
+def actualizar_lista():
+    for f in os.listdir(ruta): #ficheros reemplazado directamente por el comando os.listdir
+        (nombreFichero, extension) = os.path.splitext(f)
+        if extension == ".jpeg": #decanto por extension
+           global lista_valor
+           lista_valor.append(ruta+nombreFichero+extension)
+actualizar_lista()
+#print lista_valor
+
+#lista claves
+indices = len(lista_valor)
+#creo la nueva lista_clave, para alojar los indices
+lista_clave = []
+#iterando para rellenar lista_clave
+for i in range(indices):
+    #lista_clave.append('im'+str(i))
+    lista_clave.append(i)
+#print lista_clave
+########ree,plazar en txt las 3 primeras y por el numero de indice son ternas
+
+###imprime en fichero 
+def columna_dos():
+    with open('plan.py', 'a') as listado: # Indicamos el valor 'a' para escribir a continuacion del texto existente
+        for i in lista_clave:
+            algo = ("""\n
+            \n
+            \n
+try:
+    if lista_valor[alfa] == lista_valor[{0}]:
+        #print "Esta la obvio"
+        pass
+    else:
+        #print "comparo",lista_valor[alfa], lista_valor[{0}]
+        resultado = ImageChops.difference(Image.open(lista_valor[alfa]), Image.open(lista_valor[{0}])).getbbox() is None
+        if (resultado==True):
+            #print resultado
+            #print "LAS IMAGENES SON IGUALES"
+            #print "He encontrado esta copia: ",lista_valor[{0}]
+            ahora = datetime.datetime.now()
+            shutil.copy(lista_valor[{0}], '/tmp/fotos_borradas/%s.jpg'%ahora)
+            os.remove(lista_valor[{0}])
+        else:
+            pass #print "SON DIFERENTES"
+
+        #pass
+except (IndexError, IOError):
+        pass
+
+""").format(i)
+            #print algo
+            listado.write(algo)
+        #instr = "'{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}'".format(softname, procversion, int(percent),
+columna_dos()
+
+
