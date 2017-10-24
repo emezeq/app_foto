@@ -3,6 +3,9 @@
 Script para borrar fotos repetidas. 
 funcionando sólo en linux por el momento.
 
+script to delete repeated photos
+running only in linux for the moment
+
 en python 2.7
 
 #################################################################################################
@@ -59,8 +62,10 @@ Despues de lanzar la app se crearan 2 ficheros mas "plan.py", y "primero.py"
 Despues de ejecutar la aplicacion y una vez que al analisis ha finalizado debera borrar los archivos que no se encuentran mencionados mas arriba en 'Ficheros iniciales'.
 
 NOTAS:
-La segunda linea de codigo de App_foto.py aparece comentada. A descomentar sin es necesario.
-Las imágenes deben ser ".jpg" o ".jpeg".
+
+-La segunda linea de codigo de App_foto.py aparece comentada. A descomentar sin es necesario.
+
+-Las imágenes deben ser ".jpg" o ".jpeg".
 
 ###########################################
 
