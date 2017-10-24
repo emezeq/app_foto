@@ -61,8 +61,3 @@ Las imágenes deben ser ".jpg" o ".jpeg".
 
 ###########################################
 
-*a implementar:
--hacer comparacion por extension. por ejemplo
-"se encontraron 200 imagenes con formato jpg....analizando"
-"se encontraron 10 imagenes con formato jpeg.....analizando"
--las rutas estan escritas a mano..hay que implementar las variables para poder llamar desde no importa que script
