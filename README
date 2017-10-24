@@ -1,6 +1,7 @@
-Instrucciones: 
 
-Aplicacion funcionando!!
+
+Script para borrar fotos repetidas. 
+funcionando sólo en linux por el momento.
 
 en python 2.7
 
@@ -48,6 +49,8 @@ listar.py:
 carpeta original.
 	
 #################################################################################################
+
+Instrucciones: 
 
 1) ejecutar "app_foto.py"
 (la ruta a ingresar debe estar sin comillas ni espacios sin escapar)
